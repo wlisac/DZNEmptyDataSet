@@ -79,6 +79,7 @@ static char const * const kEmptyDataSetView =       "emptyDataSetView";
         view = [DZNEmptyDataSetView new];
         view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         view.hidden = YES;
+        view.isAccessibilityElement = NO;
         
         view.tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dzn_didTapContentView:)];
         view.tapGesture.delegate = self;
@@ -657,6 +658,7 @@ NSString *dzn_implementationKey(id target, SEL selector)
         _contentView.backgroundColor = [UIColor clearColor];
         _contentView.userInteractionEnabled = YES;
         _contentView.alpha = 0;
+        _contentView.isAccessibilityElement = NO;
     }
     return _contentView;
 }
